@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posizione_ISS</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0; /* no margine interno */
+            overflow: hidden; /* nasondere scroll */
+        }
+
+        .credits {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9px;
+            text-align: left;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+    <script src="sketch.js"></script>
+
+    <div class="credits">
+        Texture: NASA/Goddard Space Flight Center Scientific Visualization Studio
+        <br>
+        Data courtesy of: Reto Stockli and NASA's Earth Observatory
+    </div>
+    
+
+    
+</body>
+</html>
