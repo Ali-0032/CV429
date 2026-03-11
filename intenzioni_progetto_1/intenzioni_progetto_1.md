@@ -19,10 +19,10 @@ Il target di riferimento è un pubblico generalista, con un particolare interess
 <u>Immagini:</u>
 <br>
 
-[https://www.spitzer.caltech.edu/images](url)
+https://www.spitzer.caltech.edu/images
 
 
 <u>Suoni:</u>
 <br>
 
-[https://soundcloud.com/nasa/tracks](url)
+https://soundcloud.com/nasa/tracks
