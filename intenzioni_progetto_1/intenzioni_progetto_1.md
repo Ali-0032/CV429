@@ -7,7 +7,7 @@ Il prgetto si propone di tradurre in esperienza sonora le immagini infrarosse di
 
 ### Interazione
 
-Le immagini verrano scomposte nei canali RGB, dove ogni colore verrà ricondotto alla sua specifica frequenza infrarossa. L'utente muovendo il cursore sull'immagine produrrà dei suoni basati 
+Le immagini verrano scomposte nei canali RGB, dove ogni colore verrà ricondotto alla sua specifica frequenza infrarossa. L'utente muovendo il cursore sull'immagine produrrà dei suoni in base al colore dei pixel con cui interagisce.
 
 
 ### Target
