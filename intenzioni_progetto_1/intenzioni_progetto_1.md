@@ -2,7 +2,12 @@
 
 ### Concetto
 
-Il prgetto si propone di tradurre in esperienza sonora le immagini infrarosse di nebulose, raccolte dal telescopio spaziale Spitzer. L'obbiettivo è di rendere le immagini udibili e interattive attraverso la sonificazione dei dati.
+Il progetto si propone di raccogliere e sonificare i dati infrarosso di nebulose, tradotti in immagini, raccolti dal telescopio spaziale Spitzer.<br>
+
+Lo scopo divulgativo principale è aiutare le persone a leggere un'immagine astronomica prodotta da dati infrarossi. A questo scopo il suono verrà sfruttato come strumento di supporto, che permetterà di far sentire e percipire l'energia e la densità delle frequenze infrarosse, oltre che a renderle maggiormente distinguibili tra loro. <br>
+
+Quindi verrano selezionate alcune immagini  di nebulose con tre canali di frequenze infrarosse (per renderne semplice ed immediata la comprensione), ciascuna delle quali verrà associata ad un suono registrato nello spazio, che più rappresenta percettivamente la frequenza.
+
 
 
 ### Interazione
