@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eagle Nebula - Progetto 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/addons/p5.sound.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="close-button" id="reset-all">
+            <span></span>
+            <span></span>
+        </div>
+
+        <section class="main-content">
+            <h1 class="main-title">Eagle Nebula</h1>
+            <div class="image-wrapper">
+                <img src="eagle_nebula_rgb.jpg" id="nebula-display" alt="Eagle Nebula" class="nebula-img">
+            </div>
+            <p class="caption">fonte telescopio spaziale Spitzer</p>
+        </section>
+
+        <aside class="identity-card">
+            <h2 class="sub-title align-with-img">Identity card</h2>
+            
+            <div class="data-table">
+                <div class="data-row"><span>Name:</span><p>Eagle Nebula (M16, NGC 6611)</p></div>
+                <div class="data-row"><span>Type:</span><p>Star Formation</p></div>
+                <div class="data-row"><span>Distance:</span><p>5,700 light-years from Earth</p></div>
+                <div class="data-row"><span>Host Galaxy:</span><p>Milky Way</p></div>
+                <div class="data-row"><span>Constellation:</span><p>Serpens</p></div>
+                <div class="data-row"><span>Estimated Age:</span><p>2-3 million years</p></div>
+                <div class="data-row"><span>Size:</span><p>70x55 light-years</p></div>
+                <div class="data-row"><span>Discovered by:</span><p>Jean-Philippe de Chéseaux (1745)</p></div>
+            </div>
+
+            <h2 class="sub-title spectral">Spectral Mapping</h2>
+            
+            <div class="spectral-container">
+                <div class="spectral-header">
+                    <span>Color</span>
+                    <span>Wavelength</span>
+                    <span>Sound on/off</span>
+                </div>
+                <div class="line-1pt"></div>
+                
+                <div class="spectral-rows">
+                    <div class="spec-row" id="row-1">
+                        <div class="circle filled"></div>
+                        <span class="txt-20">all</span><span class="txt-20">all</span><span class="txt-20 status">on</span>
+                    </div>
+                    <div class="spec-row" id="row-2">
+                        <div class="circle"></div>
+                        <span class="txt-20">blue</span><span class="txt-20">4.5 µm</span><span class="txt-20 status">off</span>
+                    </div>
+                    <div class="spec-row" id="row-3">
+                        <div class="circle"></div>
+                        <span class="txt-20">green</span><span class="txt-20">8.0 µm</span><span class="txt-20 status">off</span>
+                    </div>
+                    <div class="spec-row" id="row-4">
+                        <div class="circle"></div>
+                        <span class="txt-20">red</span><span class="txt-20">24.0 µm</span><span class="txt-20 status">off</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="extra-column">
+            <details class="dropdown-section">
+                <summary>
+                    <h2 class="sub-title">Overview</h2>
+                    <div class="triangle"></div>
+                </summary>
+                <div class="dropdown-content">
+                    <p>Located 5,700 light-years away in the Serpens constellation, the Eagle Nebula is one of the most iconic "stellar nurseries" in our galaxy. It is a vast cloud of interstellar gas and dust where new stars are constantly being born. While it looks like a static painting, it is actually a violent and dynamic place: massive young stars emit intense radiation that carves and shapes the surrounding gas into the towering structures known as the "Pillars of Creation." Through Spitzer’s infrared eye, we can look past the dark dust and witness the fiery process of star formation hidden inside.</p>
+                </div>
+            </details>
+
+            <details class="dropdown-section">
+                <summary>
+                    <h2 class="sub-title">Frequency</h2>
+                    <div class="triangle"></div>
+                </summary>
+                <div class="dropdown-content">
+                    <p>Humans cannot see infrared light, but we can feel it as heat. To study the Eagle Nebula, the Spitzer Space Telescope captures different "flavors" of infrared radiation, which we have mapped to visible colors and unique sounds:</p>
+                    <p><strong>Blue (4.5 µm):</strong> This frequency highlights the "old guard"—mature stars that have already cleared their surroundings of gas and dust.</p>
+                    <p><strong>Green (8.0 µm):</strong> This band reveals Organic Molecules (PAHs). It shows the skeletal structure of the nebula, where thick dust clouds are being sculpted by stellar winds.</p>
+                    <p><strong>Red (24.0 µm):</strong> The most energetic band. It detects "Protostars"—infant suns so young and hot they glow fiercely through their dusty cocoons.</p>
+                    <p><em>Interact with the buttons to isolate these layers and hear the hidden symphony of the cosmos.</em></p>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* Base Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0B0E14;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Grid Layout basato su 1728 x 994 */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    padding: 40px 80px 80px 80px; 
+    max-width: 1728px;
+    height: 994px; 
+    margin: 0 auto;
+    align-content: start;
+    position: relative; /* Necessario per il posizionamento assoluto della X */
+}
+
+/* Colonna 1 e 2 */
+.main-content {
+    grid-column: span 2;
+}
+
+.main-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 200;
+    font-size: 32px; 
+    margin: 0 0 40px 0;
+    text-transform: capitalize;
+}
+
+.image-wrapper {
+    width: 769px;
+    height: 813px;
+    overflow: hidden;
+}
+
+.nebula-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    font-size: 14px; 
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Colonna 3 */
+.identity-card {
+    grid-column: 3;
+}
+
+.sub-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 200;
+    font-size: 24px; 
+    margin: 0; 
+}
+
+.spectral {
+    margin-top: 40px;
+    margin-bottom: 40px; 
+}
+
+/* Tabella Dati */
+.data-table {
+    border-top: 1px solid white;
+}
+
+.data-row {
+    display: flex;
+    align-items: center;
+    height: 50px; 
+    border-bottom: 1px solid white;
+    font-size: 14px;
+}
+
+.data-row span {
+    width: 126px; 
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.data-row p {
+    margin: 0;
+}
+
+/* --- ALLINEAMENTI --- */
+
+.align-with-img {
+    margin-top: 72px; 
+    margin-bottom: 40px;
+}
+
+.spectral-container {
+    width: 370px;
+    margin-top: 40px;
+}
+
+.spectral-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 38px; 
+    font-size: 14px;
+    margin-bottom: 17px;
+}
+
+.line-1pt {
+    width: 370px;
+    height: 1px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.spec-row {
+    display: grid;
+    grid-template-columns: 38px 1fr 1fr 1fr;
+    align-items: center;
+    height: 50px;
+    cursor: pointer;
+}
+
+.circle {
+    width: 18px;
+    height: 18px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.circle.filled {
+    background-color: white !important;
+}
+
+.txt-20 {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.status {
+    text-transform: uppercase;
+}
+
+/* --- COLONNA EXTRA (Overview & Frequency) --- */
+
+.extra-column {
+    grid-column: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; 
+    padding-top: 72px; 
+}
+
+.dropdown-section summary {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 15px; 
+    cursor: pointer;
+}
+
+.dropdown-section summary::-webkit-details-marker { display: none; }
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid transparent; 
+    border-bottom: none;
+    position: relative;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+}
+
+.triangle::after {
+    content: '';
+    position: absolute;
+    top: -17px; 
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid white; 
+}
+
+.triangle::before {
+    content: '';
+    position: absolute;
+    top: -15.5px;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 13px solid #0B0E14; 
+    z-index: 1;
+}
+
+.dropdown-section[open] .triangle {
+    transform: rotate(0deg);
+}
+
+.dropdown-section[open] .triangle::after {
+    border-top: 15px solid white; 
+}
+
+.dropdown-section[open] .triangle::before {
+    display: none; 
+}
+
+.dropdown-content {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; 
+    font-size: 18px;
+    line-height: 1.4; 
+    color: white;
+    text-align: left;
+    padding: 20px 0;
+}
+
+.dropdown-content p {
+    margin-bottom: 15px;
+}
+
+/* --- PULSANTE X --- */
+.close-button { 
+    position: absolute; 
+    top: 40px; 
+    right: 80px; 
+    width: 30px; 
+    height: 30px; 
+    cursor: pointer; 
+    z-index: 100; 
+} 
+
+.close-button span { 
+    position: absolute; 
+    top: 50%; 
+    left: 0; 
+    width: 100%; 
+    height: 1px; 
+    background-color: white; 
+    display: block; 
+} 
+
+.close-button span:nth-child(1) { 
+    transform: rotate(45deg); 
+} 
+
+.close-button span:nth-child(2) { 
+    transform: rotate(-45deg); 
+} 
+
+.close-button:hover { 
+    opacity: 0.7; 
+}
