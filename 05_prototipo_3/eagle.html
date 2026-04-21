@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Archive - Eagle Nebula</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-menu">
+        <div class="menu-left">
+            <a href="index.html" style="text-decoration: none; color: white;">
+                <span class="menu-title">Nebula Vision</span>
+            </a>
+        </div>
+        <div class="menu-right">
+            <a href="helix.html" class="btn-pill-top">Helix Nebula</a>
+            <a href="eagle.html" class="btn-pill-top active">Eagle Nebula</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="main-content">
+            <h1 class="main-title">Eagle Nebula</h1>
+            
+            <div class="filter-bar">
+                <button class="filter-pill active" onclick="changeContent(1)">Visible Light</button>
+                <button class="filter-pill" onclick="changeContent(2)">Spitzer Near-Infrared</button>
+                <button class="filter-pill" onclick="changeContent(3)">Spitzer Mid-Infrared</button>
+            </div>
+
+            <div class="image-wrapper" id="interactive-wrapper">
+                <img src="eagle_nebula_1.jpg" id="nebula-display" alt="Eagle Nebula" class="nebula-img">
+                
+                <div id="hotspot-polvere" class="hotspot" onclick="togglePopup('polvere', true)"></div>
+                <div id="hotspot-stella" class="hotspot" onclick="togglePopup('stella', true)"></div>
+                <div id="hotspot-nodi" class="hotspot" onclick="togglePopup('nodi', true)"></div>
+
+                <svg id="connection-svg" class="connection-line-container">
+                    <line id="svg-line" x1="0" y1="0" x2="0" y2="0" stroke="white" stroke-width="1" />
+                </svg>
+
+                <div id="popup-stella" class="popup-box popup-top-right">
+                    <span class="close-btn" onclick="togglePopup('stella', false)">×</span>
+                    <div class="popup-content">
+                        <div class="zoom-container">
+                            <img src="eagle_nebula_pilastri.png" alt="Pillars Detail">
+                        </div>
+                        <div class="popup-text"></div>
+                    </div>
+                </div>
+
+                <div id="popup-polvere" class="popup-box popup-bottom-left">
+                    <span class="close-btn" onclick="togglePopup('polvere', false)">×</span>
+                    <div class="popup-content">
+                        <div class="zoom-container">
+                            <img src="eagle_nebula_zoom_2.jpg" alt="Dust Detail">
+                        </div>
+                        <div class="popup-text"></div>
+                    </div>
+                </div>
+
+                <div id="popup-nodi" class="popup-box popup-bottom-right">
+                    <span class="close-btn" onclick="togglePopup('nodi', false)">×</span>
+                    <div class="popup-content">
+                        <div class="zoom-container">
+                            <img src="eagle_nebula_zoom_3.jpg" alt="Star Detail">
+                        </div>
+                        <div class="popup-text"></div>
+                    </div>
+                </div>
+            </div>
+            <p id="image-caption" class="caption">NASA, ESA and the Hubble Heritage Team (STScI/AURA).</p>
+        </section>
+
+        <aside class="content-sidebar">
+            <div class="extra-column" id="hubble-content">
+                <h2 class="overview-title">Overview</h2>
+                <div class="overview-text">
+                    <p>The Eagle Nebula, officially cataloged as Messier 16 (M16) or NGC 6611, is one of the most famous and well-studied regions of the sky. This image shows it in visible light, the spectrum closest to what the human eye perceives. Located between 5,700 and 7,000 light-years from Earth in the constellation Serpens, it is not just a cloud of gas, but an open cluster of about 8,100 young stars born only 1 to 2 million years ago.</p>
+                    <p>Its worldwide fame is primarily due to the "Pillars of Creation," massive columns of dust and gas that serve as incubators for the birth of new stars. These structures became an astronomical icon thanks to the spectacular images from the Hubble Telescope and are essential for understanding the early stages that led to the formation of our own Solar System.</p>
+                </div>
+
+                <h2 class="planetary-title">What is an Emission Nebula?</h2>
+                <div class="planetary-text">
+                    <p>An emission nebula is a giant cloud of gas that glows with its own light. This phenomenon occurs because the cloud is "energized" by nearby extremely hot and massive stars that emit powerful ultraviolet radiation. When this radiation hits the atoms in the nebula, it ionizes them, causing them to emit light.</p>
+                    <p>Since hydrogen is the most abundant element, these clouds often appear deep red in color. There are various types: from star-forming regions (like the Eagle Nebula) to planetary nebulae, formed by the layers expelled by a star at the end of its life.</p>
+                </div>
+            </div>
+
+            <div class="extra-column" id="near-infrared-content" style="display: none;">
+                <h2 class="overview-title">The Spitzer near-infrared</h2>
+                <div class="overview-text">
+                    <p>Thanks to near-infrared, we can see beyond cosmic dust. In the case of the Eagle Nebula, this band captures the light emitted by stars and ionized gas structures, allowing us to observe thousands of newborn stars and the full shape of the famous Pillars of Creation, which would otherwise be hidden by the clouds.</p>
+                </div>
+
+                <h2 class="planetary-title">Frequency</h2>
+                <div class="planetary-text">
+                    <p><strong>Blue infrared (3.6 microns)</strong>: at this wavelength, the primary focus is the stars. The nebula appears dotted with a multitude of stars, including those that normally remain buried inside the dust clouds.</p>
+                    <p><strong>Green infrared (4.5 microns)</strong>: this frequency is ideal for observing ionized gas and turbulent clouds. It helps map the gaseous network that makes up the entire "stellar factory."</p>
+                    <p><strong>Orange infrared (5.8 microns)</strong>: this band captures a combination of starlight and gaseous heat, helping to give three-dimensionality to the nebula's shapes.</p>
+                    <p><strong>Red infrared (8.0 microns)</strong>: reveals cold dust and complex organic molecules (polycyclic aromatic hydrocarbons). Here, the Pillars of Creation appear in all their majesty, showing us the nurseries where matter condenses to create new planetary systems.</p>
+                </div>
+            </div>
+
+            <div class="extra-column" id="mid-infrared-content" style="display: none;">
+                <h2 class="overview-title">The Spitzer Mid-Infrared</h2>
+                <div class="overview-text">
+                    <p>Mid-infrared acts as a heat detector, allowing astronomers to see through thick blankets of cosmic dust. In the Eagle Nebula, this technology is essential for studying protostellar objects, which are embryonic stars still hidden within their gas cocoons.</p>
+                    <p>While optical telescopes see the Pillars of Creation as dark and opaque towers, mid-infrared is able to penetrate them, revealing the newborn stars growing inside and the dust heated by the energy of giant stars or possible supernova explosions.</p>
+                </div>
+                <h2 class="planetary-title">Frequency</h2>
+                <div class="planetary-text">
+                    <p><strong>Blue infrared (4.5 microns)</strong>: here hot and ionized gases are primarily observed. This frequency allows for the mapping of the intricate networks of turbulent clouds that shape the entire region.</p>
+                    <p><strong>Green infrared (8.0 microns)</strong>: this is the ideal frequency for seeing cold dust and complex organic molecules.</p>
+                    <p><strong>Red infrared (24.0 microns)</strong>: this is the band of intense heat. It shows heated dust and allows for the identification of where embryonic stars called protostars are being born.</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="sketch_eagle.js"></script>
+</body>
+</html>

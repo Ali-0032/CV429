@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Archive - Helix Nebula</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-menu">
+        <div class="menu-left">
+            <a href="index.html" style="text-decoration: none; color: white;">
+                <span class="menu-title">Nebula Vision</span>
+            </a>
+        </div>
+        <div class="menu-right">
+            <a href="helix.html" class="btn-pill-top active">Helix Nebula</a>
+            <a href="eagle.html" class="btn-pill-top">Eagle Nebula</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="main-content">
+            <h1 class="main-title">Helix Nebula</h1>
+            
+            <div class="filter-bar">
+                <button class="filter-pill active" onclick="changeContent(1)">Visible Light</button>
+                <button class="filter-pill" onclick="changeContent(2)">Spitzer Near-Infrared</button>
+                <button class="filter-pill" onclick="changeContent(3)">Spitzer Mid-Infrared</button>
+            </div>
+
+            <div class="image-wrapper" id="interactive-wrapper">
+                <img src="helix_nebula_1.jpg" id="nebula-display" alt="Helix Nebula" class="nebula-img">
+                
+                <div id="hotspot-polvere" class="hotspot" onclick="togglePopup('polvere', true)"></div>
+                <div id="hotspot-stella" class="hotspot" onclick="togglePopup('stella', true)"></div>
+                <div id="hotspot-nodi" class="hotspot" onclick="togglePopup('nodi', true)"></div>
+
+                <svg id="connection-svg" class="connection-line-container">
+                    <line id="svg-line" x1="0" y1="0" x2="0" y2="0" stroke="white" stroke-width="1" />
+                </svg>
+
+                <div id="popup-stella" class="popup-box popup-top-right">
+                    <span class="close-btn" onclick="togglePopup('stella', false)">×</span>
+                    <div class="popup-content">
+                        <div class="zoom-container">
+                            <img src="helix_nebula_3_stella_centrale.jpg" alt="Ingrandimento Stella">
+                            <span class="arrow-marker"></span>
+                        </div>
+                        <div class="popup-text"></div>
+                    </div>
+                </div>
+
+                <div id="popup-polvere" class="popup-box popup-bottom-left">
+                    <span class="close-btn" onclick="togglePopup('polvere', false)">×</span>
+                    <div class="popup-content">
+                        <div class="zoom-container">
+                            <img src="helix_nebula_3_polvere_rossa.jpg" alt="Ingrandimento Polvere">
+                        </div>
+                        <div class="popup-text"></div>
+                    </div>
+                </div>
+
+                <div id="popup-nodi" class="popup-box popup-bottom-right">
+                    <span class="close-btn" onclick="togglePopup('nodi', false)">×</span>
+                    <div class="popup-content">
+                        <div class="zoom-container">
+                            <img src="helix_nebula_nodi_cometari.jpg" alt="Ingrandimento Nodi Cometari">
+                        </div>
+                        <div class="popup-text"></div>
+                    </div>
+                </div>
+            </div>
+            <p id="image-caption" class="caption">NASA, ESA, C.R. O'Dell (Vanderbilt University), and M. Meixner, P. McCullough, and G. Bacon ( Space Telescope Science Institute).</p>
+        </section>
+
+        <aside class="content-sidebar">
+            <div class="extra-column" id="hubble-content">
+                <h2 class="overview-title">Overview</h2>
+                <div class="overview-text">
+                    <p>This is a visible light image of the Helix Nebula captured by the Hubble Space Telescope. It is the closest representation of how the human eye would perceive this object in space.</p>
+                    <p>Known as NGC 7293 or popularly as the "Eye of God", the nebula is located about 700 light-years away in the constellation of Aquarius. Formed approximately 10,600 years ago, it is one of the closest planetary nebulae to Earth. Its characteristic spiral shape was created when a Sun-like star, reaching the end of its life, expelled its outer layers. At its center shines a white dwarf, the hot core of what remains of the star, which uses its energy to make the surrounding gases glow.</p>
+                    <p>This nebula is essential for understanding the fate of our solar system, showing us what will happen when the Sun dies in about billion years.</p>
+                </div>
+
+                <h2 class="planetary-title">What is a Planetary Nebula?</h2>
+                <div class="planetary-text">
+                    <p>Despite its name, a planetary nebula has nothing to do with planets. The term was coined by 18th-century astronomers because, through the telescopes of that era, these objects appeared as round discs similar to giant planets. In reality, it is an expanding shell of ionized gas expelled by a low-to-medium mass star during the final stages of its evolution. It is a relatively brief cosmic phenomenon, lasting about 10,000 years before the gas disperses into the interstellar medium. Our own Sun is also destined to create a planetary nebula in about 5 billion years.</p>
+                </div>
+            </div>
+
+            <div class="extra-column" id="near-infrared-content" style="display: none;">
+                <h2 class="overview-title">The Spitzer Near-Infrared</h2>
+                <div class="overview-text">
+                    <p>Near-infrared frequencies are those closest to visible light, with the difference that they can see through cosmic dust. In the case of the Helix Nebula with this band, Spitzer captures the light emitted by stars and the glow of the outer layers of molecular hydrogen and the cometary knots, which form the iconic eye shape, expelled by the star at the moment of its death.</p>
+                </div>
+
+                <h2 class="planetary-title">Frequency</h2>
+                <div class="planetary-text">
+                    <p><strong>Blue infrared (3.6 microns)</strong>: mainly captures the glow of the outer gaseous layers composed of hydrogen. Through this frequency, it is possible to observe the stars located behind the nebula and the white dwarf, the central star.</p>
+                    <p><strong>Green infrared (4.5 microns)</strong>: this frequency is used to observe the cometary knots, as it is particularly sensitive to molecular hydrogen emissions.</p>
+                    <p><strong>Red infrared (8.0 microns)</strong>: this frequency identifies the warm dust and complex molecules present within the nebula.</p>
+                </div>
+            </div>
+
+            <div class="extra-column" id="mid-infrared-content" style="display: none;">
+                <h2 class="overview-title">The Spitzer mid-infrared</h2>
+                <div class="overview-text">
+                    <p>Le frequenze del medio infrarosso riescono a vedere il calore; nel caso della Nebulosa Elica, individuano la polvere cosmica e le molecole organiche complesse che formano la struttura. Inoltre, grazie al medio infrarosso, è possibile osservare il calore emanato dal disco di detriti polverosi situato al centro della nebulosa, proprio attorno alla nana bianca.</p>
+                </div>
+
+                <h2 class="planetary-title">Frequency</h2>
+                <div class="planetary-text">
+                    <p><strong>Blue infrared (3.6 microns)</strong>: this frequency mainly captures the light emitted by the outer layers of hydrogen gas and the surrounding stars.</p>
+                    <p><strong>Green infrared (5.8 microns)</strong>: it also shows light from the outermost gaseous envelopes, contributing to the greenish hue seen in composite images.</p>
+                    <p><strong>Red infrared (24.0 microns)</strong>: this frequency identifies the densest gas and warm dust. This wavelength reveals the red glow in the center of the "eye," indicating the debris dust expelled by the dying star.</p>
+                </div>
+            </div>
+
+        </aside>
+    </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Vision - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-background {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        .hero-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 14, 20, 0.4);
+            z-index: -1;
+        }
+        .landing-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 30px;
+            padding: 40px 80px 80px 80px;
+            max-width: 1728px;
+            margin: 0 auto;
+            height: calc(100vh - 70px);
+            align-items: end;
+        }
+        .landing-text-box {
+            grid-column: 1 / span 2; /* Occupa le ultime 2 colonne */
+            padding-bottom: 40px;
+        }
+        .landing-title-big {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 48px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .landing-subtitle-white {
+            font-family: 'Roboto', sans-serif;
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .landing-description {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            line-height: 1.6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="bg" class="hero-background"></div>
+    <div class="hero-overlay"></div>
+
+    <header class="top-menu">
+        <div class="menu-left">
+            <a href="index.html" style="text-decoration: none; color: white;">
+                <span class="menu-title">Nebula Vision</span>
+            </a>
+        </div>
+        <div class="menu-right">
+            <a href="helix.html" class="btn-pill-top">Helix Nebula</a>
+            <a href="eagle.html" class="btn-pill-top">Eagle Nebula</a>
+        </div>
+    </header>
+
+    <div class="landing-container">
+        <div class="landing-text-box">
+            <h1 class="landing-title-big">Nebula Vision</h1>
+            <div class="landing-subtitle-white">NASA '70</div>
+            <p class="landing-description">
+                This website offers a guided journey to discover two major nebulae within the Milky Way: the Eagle Nebula and the Helix Nebula. These celestial objects are key to understanding how our Solar System was born and how it will eventually die. This exploration is made possible through the vision of the Spitzer Space Telescope; its infrared technology allows us to peer through cosmic dust, leading to extraordinary discoveries.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Logica per alternare le immagini casualmente
+        const images = ['helix_nebula_1.jpg', 'eagle_nebula_1.jpg'];
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        document.getElementById('bg').style.backgroundImage = `url('${randomImage}')`;
+    </script>
+</body>
+</html>
