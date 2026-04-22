@@ -23,6 +23,15 @@ Il riferimento progettuale principale è Wikipedia, in particolare per una rigua
 
 
 ## Design dell’interfaccia e modalità di interazione
+L'esperienza utente inizia con una sezione introduttiva volta a contestualizzare gli obiettivi del sito. La navigazione è affidata a una header bar, che permette di selezionare quale delle due nebulose esplorare.
+
+<img width="1728" height="990" alt="Screenshot 2026-04-22 alle 21 10 37" src="https://github.com/user-attachments/assets/f1649e7a-eccf-4cc5-9463-977534c37b33" />
+
+Una volta selezionata la nebulosa, l'interfaccia presenta un sistema di navigazione a pulsanti posto sotto il titolo, che consente di passare tra tre diverse frequenze d'onda. Questa funzione permette all'utente di osservare la nebulosa attraverso vari spettri infrarossi, offrendo una comparazione visiva immediata.
+
+Il layout si completa con una quarta colonna laterale, dedicata all'approfondimento testuale. L’interazione principale avviene direttamente sull'immagine: la presenza di hotspot circolari attiva, al clic, un ingrandimento dell'area selezionata, accompagnato da un box informativo specifico che approfondisce le caratteristiche fisiche e astronomiche della zona evidenziata.
+
+<img width="1728" height="986" alt="Screenshot 2026-04-22 alle 21 11 53" src="https://github.com/user-attachments/assets/639c72be-b011-4e12-9895-327acbf5236d" />
 
 
 
